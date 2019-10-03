@@ -47,8 +47,8 @@ class App extends Component {
     
   }
 
-  callbackFunction = (newFood) => {
-    this.setState({foods:newFood})
+  searchFoodList = (filteredFoods) => {
+    this.setState({showFoods:filteredFoods})
   }
 
 
@@ -60,7 +60,7 @@ class App extends Component {
           <h1 className="title is-1">Iron Nutrition</h1>
             {console.log(this.state.foods)}
             {console.log(this.state.showFoods)}
-            <Search allFoodsList={this.callbackFunction} allFoodsListProp={this.state.foods} />
+            <Search allFoodsList={this.searchFoodList} allFoodsListProp={this.state.foods} />
             {/* <FoodBox importFoodsProp = {this.state.foods} /> */}
             {this.showFoodBoxes()}
         </div>
